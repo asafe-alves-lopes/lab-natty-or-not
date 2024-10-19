@@ -10,3 +10,18 @@ Estou criando um projeto Android utilizando Jetpack Compose. Crie o código de u
 ### Ajustes
 - Apenas foi necessário ajustar o import de um composable Text.
 - Enquanto fazia alguns testes anteriormente (prompt acima foi executado algumas vezes) o número de ajustes era maior, porém na tentativa atual, só o ajuste acima ocorreu.
+
+## Home Screen
+Após 300 milissegundos que a splash screen aparecer, deve ser exibida a tela home do app. Crie a tela home do app contendo, alinhado horizontalmente e verticalmente ao centro da tela e com espaçamento horizontal de 16dp, um texto "Clique no botão abaixo para adquirir uma nova sabedoria". Abaixo do texto, com um espaço de 16dp e também alinhado horizontalmente ao centro, um ícone de seta que use um drawable. Abaixo da seta, com um espaço de 16dp, um botão com texto "Nova sabedoria" e a cor de fundo do botão deve ser a mesma da splash screen.
+
+Una as activities numa só.
+
+Crie ou use algum drawable padrão para a seta e há um erro para colocar a cor de fundo do botão, corrija.
+
+Alinhe o texto "Clique no botão..." horizontalmente ao centro e adicione espaçamento lateral de 16dp.
+
+### Ajustes
+- Após o primeiro script foram geradas 2 activities, por isso foi necessário o segundo prompt.
+- Foi necessário remover alguns imports que foram gerados pela criação de duas activities e alguns foram ajustados.
+- Cor de fundo do botão foi modificada manualmente, atributo que estava no código gerado era "backgroundColor" foi alterado para "containerColor".
+- Texto "Clique no botão..." foi alinhado ao centro manualmente.

@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlin.random.Random
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +35,7 @@ fun MyApp() {
     var showSplash by remember { mutableStateOf(true) }
 
     LaunchedEffect(Unit) {
-        delay(300)
+        delay(1000)
         showSplash = false
     }
 
@@ -72,6 +73,23 @@ fun SplashScreen() {
 
 @Composable
 fun HomeScreen() {
+    val sabedorias = listOf(
+        "A vida é 10% o que acontece comigo e 90% como eu reajo a isso. Atribuída a: Charles R. Swindoll",
+        "O sucesso não é definitivo, o fracasso não é fatal: o que conta é a coragem de continuar. Atribuída a: Winston Churchill",
+        "A jornada de mil milhas começa com um único passo. Atribuída a: Lao Tsé",
+        "A vida é o que acontece enquanto você está ocupado fazendo outros planos. Atribuída a: John Lennon",
+        "A melhor maneira de prever o futuro é criá-lo. Atribuída a: Peter Drucker",
+        "O que você faz fala tão alto que não consigo ouvir o que você diz. Atribuída a: Ralph Waldo Emerson",
+        "Não é o que fazemos de vez em quando que molda nossas vidas, mas o que fazemos consistentemente. Atribuída a: Tony Robbins",
+        "Você não pode mudar o vento, mas pode ajustar as velas para chegar ao seu destino. Atribuída a: Confúcio",
+        "A verdadeira sabedoria está em reconhecer a própria ignorância. Atribuída a: Sócrates",
+        "Não espere por uma crise para descobrir o que é importante na sua vida. Atribuída a: Platão"
+    )
+    var mensagem by remember { mutableStateOf("Clique no botão abaixo para adquirir uma nova sabedoria") }
+    var isThinking by remember { mutableStateOf(false) }
+
+    val scope = rememberCoroutineScope()
+
     Box(
         modifier = Modifier
             .fillMaxSize(),
@@ -82,7 +100,7 @@ fun HomeScreen() {
             modifier = Modifier.padding(horizontal = 16.dp)
         ) {
             Text(
-                text = "Clique no botão abaixo para adquirir uma nova sabedoria",
+                text = mensagem,
                 fontSize = 18.sp,
                 textAlign = TextAlign.Center
             )
@@ -93,7 +111,15 @@ fun HomeScreen() {
             )
             Spacer(modifier = Modifier.height(16.dp))
             Button(
-                onClick = { /* ação do botão */ },
+                onClick = {
+                    isThinking = true
+                    mensagem = "Estou pensando..."
+                    scope.launch {
+                        delay(1000)
+                        isThinking = false
+                        mensagem = sabedorias[Random.nextInt(sabedorias.size)]
+                    }
+                },
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF119DCF))
             ) {
                 Text(

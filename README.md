@@ -25,3 +25,16 @@ Alinhe o texto "Clique no botão..." horizontalmente ao centro e adicione espaç
 - Foi necessário remover alguns imports que foram gerados pela criação de duas activities e alguns foram ajustados.
 - Cor de fundo do botão foi modificada manualmente, atributo que estava no código gerado era "backgroundColor" foi alterado para "containerColor".
 - Texto "Clique no botão..." foi alinhado ao centro manualmente.
+
+## Create and Show Wisdom
+Crie uma lista de 10 sabedorias populares. Ao clicar no botão "Nova Sabedoria", o texto "Clique no botão..." deve desaparecer e em seu lugar uma mensagem escrita "Estou pensando...". Depois de 500 milissegundos, a mensagem "Estou pensando..." deve ser substituída por uma das sabedorias da lista criada.
+
+O launchedEffect não pode ser chamado dentro do clique do botão, corrija.
+
+Adicione ao final de cada sabedoria a quem a mesma é atribuída ou se não é conhecido, no formato " Atribuída a: " e o nome.
+
+Mostre o código com as sabedorias neste formato.
+
+### Ajustes
+- Último prompt foi necessário pois no retorno anterior vieram apenas as frases haha.
+- Modificado manualmente o tempo da Splash Screen e que o app leva para mostrar a sabedoria. 
